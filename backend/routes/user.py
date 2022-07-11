@@ -5,6 +5,7 @@ from services.upload import upload_file
 from db.models.user import UserHistory
 from datetime import datetime
 import json
+from core.config import settings
 
 router = APIRouter()
 
