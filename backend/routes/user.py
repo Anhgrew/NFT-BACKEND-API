@@ -32,9 +32,7 @@ async def get_image_search(user_id: str, data: UploadFile = File(...)):
     search_img_url = await upload_file(data=buffer, filename=filename)
     # get search result
 
-    res = requests.request(
-        "POST", "http://localhost:8000/api/v2/upload", headers=headers, data=buffer
-    )
+    res = requests.request("POST", settings.SEARCH_API, headers=headers, data=buffer)
     result = res.json()["result"]
     print(type(result))
 
